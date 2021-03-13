@@ -10,6 +10,7 @@ Welcome to FileController's documentation!
    :maxdepth: 2
    :caption: Contents:
 
+   summary
    code
 
 
