@@ -39,104 +39,200 @@
 <ul class="simple">
 <li><p>Please use the name of the object we will set up to run any commands, not the name of the class.</p></li>
 <li><p>Any functions that have to do with modifying files with numbers start from 1 instead of 0, to make FileController
-more user-friendly. So, if you wanted to do <code class="docutils literal notranslate"><span class="pre">fc.deleteLine('text_file.txt',</span> <span class="pre">'0')</span></code> to delete the first line, you’d
+more user-friendly. So, if you wanted to do <code class="docutils literal notranslate"><span class="pre">fm.deleteLine('text_file.txt',</span> <span class="pre">'0')</span></code> to delete the first line, you’d
 type ‘1’ instead of ‘0’.</p></li>
 <li><p>If a function does not work, please get in contact with me with the contacts I’ll be leaving below and I will do my
 best to fix it on the next release.</p></li>
 </ul>
 </div>
-<div class="section" id="i-getting-started">
-<h2>[I] Getting Started<a class="headerlink" href="#i-getting-started" title="Permalink to this headline">¶</a></h2>
-<p>To start using FileController, we will need to do a few things. Here is the basic configuration for the package:
-1. Import the module by typing ‘from filecontroller import <em>‘
-2. Make a object and assign it to the ‘fileController()’ class, like shown: ‘your_object = fileController()’ You will use that object every time you want to call a function from FileController
-3. You can type any function by using ‘your_object.function()’
-**NOTE:*</em> from now on we will be refering to the object as ‘fc’.</p>
-</div>
-<div class="section" id="ii-functions">
-<h2>[II] Functions<a class="headerlink" href="#ii-functions" title="Permalink to this headline">¶</a></h2>
-<p>Functions in FileController can do all the basic file management command in Python and there are also some more advanced
-tools included like a ZIP manager etc. Here is a quick table with the functions and a small usage:</p>
+<div class="section" id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 49%" />
-<col style="width: 51%" />
+<col style="width: 50%" />
+<col style="width: 50%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Functions</p></th>
-<th class="head"><p>Usage</p></th>
+<th class="head"><p>Usages</p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>fc.readFile(filename)</p></td>
-<td><p>Reads the content of a file</p></td>
+<td><p>Reads the contents of a txt file</p></td>
 </tr>
 <tr class="row-odd"><td><p>fc.writeToFile(filename, text)</p></td>
-<td><p>Writes text to the file</p></td>
+<td><p>Write text into a file</p></td>
 </tr>
 <tr class="row-even"><td><p>fc.editFile(filename, line, text)</p></td>
 <td><p>Edits a specific line of a file</p></td>
 </tr>
-<tr class="row-odd"><td><p>fc,deleteFile(filename)</p></td>
+<tr class="row-odd"><td><p>fc.deleteFile(filename)</p></td>
 <td><p>Deletes an entire file</p></td>
 </tr>
 <tr class="row-even"><td><p>fc.deleteLine(filename, line)</p></td>
 <td><p>Deletes a specific line from a file</p></td>
 </tr>
 <tr class="row-odd"><td><p>fc.getList(filename, listname)</p></td>
-<td><p>Makes list with the file’s contents</p></td>
+<td><p>Creates a list from the file</p></td>
 </tr>
 <tr class="row-even"><td><p>fc.writeList(filename, listname)</p></td>
-<td><p>Writes the contents of a list into a file</p></td>
+<td><p>Writes a list into a file</p></td>
 </tr>
 <tr class="row-odd"><td><p>fc.createFile(filename)</p></td>
-<td><p>Creates a file</p></td>
+<td><p>Create a file</p></td>
 </tr>
-<tr class="row-even"><td><p>fc.zipFiles(number, zipname)</p></td>
-<td><p>Zips a number of files into 1</p></td>
-</tr>
-<tr class="row-odd"><td><p>fc.renameFile(oldName, newName)</p></td>
-<td><p>Renames a file with a name by the user</p></td>
-</tr>
-<tr class="row-even"><td><p>fc.readZIP(filename)</p></td>
-<td><p>Reads the contents of a ZIP file</p></td>
+<tr class="row-even"><td><p>fc.renameFile(oldname, newname)</p></td>
+<td><p>Renames a file</p></td>
 </tr>
 <tr class="row-odd"><td><p>fc.combine(f1, f2, merged_file)</p></td>
-<td><p>Combines 2 .txt files into 1</p></td>
+<td><p>Merges two .txt files into one</p></td>
+</tr>
+<tr class="row-even"><td><p>fc.replaceWord(oldword, newword)</p></td>
+<td><p>Replaces a word in a file</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Functions</p></th>
+<th class="head"><p>Usages</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>fc.zipFiles(number, zipname)</p></td>
+<td><p>Zips a number of .txt files into 1</p></td>
+</tr>
+<tr class="row-odd"><td><p>fc.readZIP(zipname)</p></td>
+<td><p>Reads the contents of a ZIP file</p></td>
+</tr>
+<tr class="row-even"><td><p>fc.extract(zipname)</p></td>
+<td><p>Extracts a ZIP file</p></td>
 </tr>
 </tbody>
 </table>
 </div>
-<div class="section" id="iii-usages">
-<h2>[III] Usages<a class="headerlink" href="#iii-usages" title="Permalink to this headline">¶</a></h2>
-<p>After you saw the table above, you may have a general idea of what each function does. Below there are the exact usages
-along with other information that may be useful:</p>
-<p><strong>fc.readfile(filename)</strong>: Reads each line of a specific file given by the user and prints it back. In this command .txt
-is required</p>
-<p><strong>fc.writeToFile(filename, text)</strong>: Writes text given by the user to the bottom of the file. In this command, .txt is
-required</p>
-<p><strong>fc.editFile(filename, line, text)</strong>: Edits a specific line of a file with the text given.</p>
-<p><strong>fc.deleteFile(filename)</strong>: Deletes all the contents of a specific file</p>
-<p><strong>fc.deleteLine</strong>: Deletes a specific line for a file. As we mentioned in the beginning, keep in mind that this command
-does not work with the binary system, so position 1 on the list is ‘1’ and not ‘0’, along with the others.</p>
-<p><strong>fc.getList(filename, listname)</strong>: Makes a list with the lines of a file. This function must be assigned to a variable
-that can be later used as a normal list</p>
-<p><strong>fc.writeList(filename, listname)</strong>: Writes a pre-existing list on a specific file. This command, along with the other,
-can be used if you want to manually edit the contents of a file and add them back to the file instead of using the
-.editFile() function</p>
-<p><strong>fc.createFile(filename)</strong>: Creates a file with a name given by the user into the same directory</p>
-<p><strong>fc.zipFiles(number, zipname)</strong>: Adds files into a ZIP file (currently works only with text files, will be updated on
-newer versions). Can be used with or without .txt at the end of the file, as well as with different directories.</p>
-<p><strong>fc.renameFile(old_name, new_name)</strong>: Changes the name of a file</p>
-<p><strong>fc.readZIP(filename)</strong>: Reads the contents of the ZIP file and gives a tree view of the directories to the console.
-(can also work with different directories)</p>
-<p><strong>fc.combine(file1, file2, merged_file)</strong>: Combines 2 text files into 1 (Do not put .txt at the end of the merged file)</p>
+<div class="section" id="usages">
+<h2>Usages<a class="headerlink" href="#usages" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line"><strong>fm.readfile(filename)</strong>: Reads each line of a specific file given by the user and prints it back. In this command .txt is required</div>
+<div class="line"><strong>fm.writeToFile(filename, text)</strong>: Writes text given by the user to the bottom of the file. In this command, .txt is required</div>
+<div class="line"><strong>fm.editFile(filename, line, text)</strong>: Edits a specific line of a file with the text given.</div>
+<div class="line"><strong>fm.deleteFile(filename)</strong>: Deletes all the contents of a specific file</div>
+<div class="line"><strong>fm.deleteLine</strong>: Deletes a specific line for a file. As we mentioned in the beginning, keep in mind that this command does not work with the binary system, so position 1 on the list is ‘1’ and not ‘0’, along with the others.</div>
+<div class="line"><strong>fm.getList(filename, listname)</strong>: Makes a list with the lines of a file. This function must be assigned to a variable that can be later used as a normal list</div>
+<div class="line"><strong>fm.writeList(filename, listname)</strong>: Writes a pre-existing list on a specific file. This command, along with the other, can be used if you want to manually edit the contents of a file and add them back to the file instead of using the .editFile() function</div>
+<div class="line"><strong>fm.createFile(filename)</strong>: Creates a file with a name given by the user into the same directory</div>
+<div class="line"><strong>fm.renameFile(old_name, new_name)</strong>: Changes the name of a file</div>
+<div class="line"><strong>fm.combine(file1, file2, merged_file)</strong>: Combines 2 text files into 1 (Do not put .txt at the end of the merged file)</div>
+<div class="line"><strong>fm.replaceWord(filename, old_word, new_word)</strong>: Replaces the old word with the new word in a file</div>
+<div class="line"><br /></div>
+<div class="line"><strong>zm.zipFiles(number, zipname)</strong>: Adds files into a ZIP file (currently works only with text files, will be updated on newer versions). Can be used with or without .txt at the end of the file, as well as with different directories.</div>
+<div class="line"><strong>zm.readZIP(filename)</strong>: Reads the contents of the ZIP file and gives a tree view of the directories to the console. (can also work with different directories)</div>
+<div class="line"><strong>zm.extract(filename)</strong>: Extracts all the contents of a ZIP file</div>
 </div>
-<div class="section" id="iv-closing">
-<h2>[IV] Closing<a class="headerlink" href="#iv-closing" title="Permalink to this headline">¶</a></h2>
-<p>This is the code documentation of FileController 1.0.1. For any issues, feel free to contact me on GitHub (alex.m) and
-I’d be more than happy to help you with any issues. This is a small project and I have just started, so you may find
-some errors. If you find any errors, contact me on GitHub and I’ll make sure to include a fix on the next version.</p>
+</div>
+<div class="section" id="gui">
+<h2>GUI<a class="headerlink" href="#gui" title="Permalink to this headline">¶</a></h2>
+<p>GUI Interfaces in FileController work a little bit differently than functions. To run a class, you have to follow a few
+extra steps other than importing FileController
+1. Import the built-in library Tkinter by typing <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">tkinter</span> <span class="pre">import</span> <span class="pre">*</span></code>
+2. Define the Tk() class within Tkinter: <code class="docutils literal notranslate"><span class="pre">root</span> <span class="pre">=</span> <span class="pre">Tk()</span></code>
+3. Define the fileGUI or the zipGUI class form FileController (usually called win) and pass into it the Tk() object:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">win</span> <span class="pre">=</span> <span class="pre">fileGUI(root)</span></code> / <code class="docutils literal notranslate"><span class="pre">win</span> <span class="pre">=</span> <span class="pre">zipGUI()</span></code></p>
+</div></blockquote>
+<ol class="arabic simple" start="4">
+<li><p>Type (root.mainloop()) at the end.</p></li>
+</ol>
+<p><strong>NOTE:</strong> Please only use 1 GUI class at a time, or separate them into functions.</p>
+<p>Here’s a code template for using fileGUI():</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">filecontroller</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">tkinter</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">root</span> <span class="o">=</span> <span class="n">Tk</span><span class="p">()</span>
+<span class="n">win</span> <span class="o">=</span> <span class="n">fileGUI</span><span class="p">(</span><span class="n">root</span><span class="p">)</span>
+<span class="n">root</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>and here’s a code template for using zipGUI():</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">filecontroller</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">tkinter</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">root</span> <span class="o">=</span> <span class="n">Tk</span><span class="p">()</span>
+<span class="n">win</span> <span class="o">=</span> <span class="n">zipGUI</span><span class="p">(</span><span class="n">root</span><span class="p">)</span>
+<span class="n">root</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="using-guis-together">
+<h2>Using GUIs together<a class="headerlink" href="#using-guis-together" title="Permalink to this headline">¶</a></h2>
+<p>As mentioned before, you cannot use 2 GUI classes at the same time, because Tkinter cannot handle 2 windows open at
+the same file. But there are 2 easy ways that we can get around this.</p>
+<ol class="arabic">
+<li><p><strong>Using different window names</strong>
+One easy way that we can get around this is by using different window names. That means, when we make the Tkinter
+Tk() class object, we will make two different objects with two different names, for example <code class="docutils literal notranslate"><span class="pre">root</span></code> and <code class="docutils literal notranslate"><span class="pre">top</span></code>.</p>
+<p>Here’s an example where we use 2 different window names:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">startFileGUI</span><span class="p">():</span>
+    <span class="n">root</span> <span class="o">=</span> <span class="n">Tk</span><span class="p">()</span>
+    <span class="n">win</span> <span class="o">=</span> <span class="n">fileGUI</span><span class="p">(</span><span class="n">root</span><span class="p">)</span>
+    <span class="n">root</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">startZipGUI</span><span class="p">():</span>
+    <span class="n">root</span> <span class="o">=</span> <span class="n">Tk</span><span class="p">()</span>
+    <span class="n">win</span> <span class="o">=</span> <span class="n">zipGUI</span><span class="p">(</span><span class="n">root</span><span class="p">)</span>
+    <span class="n">root</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;--Option Chooser--&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;1 - File GUI&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;2 - Zip GUI&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;3 - Exit&#39;</span><span class="p">)</span>
+<span class="n">uChoice</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
+
+<span class="k">if</span> <span class="n">uChoice</span> <span class="o">==</span> <span class="s1">&#39;1&#39;</span><span class="p">:</span>
+    <span class="n">startFileGUI</span><span class="p">()</span>
+<span class="k">elif</span> <span class="n">uChoice</span> <span class="o">==</span> <span class="s1">&#39;2&#39;</span><span class="p">:</span>
+    <span class="n">startZipGUI</span><span class="p">()</span>
+<span class="k">elif</span> <span class="n">uChoice</span> <span class="o">==</span> <span class="s1">&#39;3&#39;</span><span class="p">:</span>
+    <span class="n">quit</span><span class="p">()</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Invalid option&#39;</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<p>However, this code is not effective, because you have to close the first window for the second window to open. You could
+use a library like subprocess to avoid that, but this is not part of the documentation.</p>
+</li>
+<li><p><strong>Using Functions</strong>
+For this method, we will use functions to let the user choose which window they want to open without them being
+connected to each other in any way. We will do the same process as before, but we will split them into different
+functions so that the user can choose which one of them they want to open.</p></li>
+</ol>
 <p>–End–</p>
 </div>
 </div></blockquote>
@@ -163,7 +259,6 @@ some errors. If you find any errors, contact me on GitHub and I’ll make sure t
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="summary.html">Information</a></li>
 <li class="toctree-l1"><a class="reference internal" href="summary.html#using-filecontroller">Using FileController</a></li>
-<li class="toctree-l1"><a class="reference internal" href="summary.html#conclusion">Conclusion</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Code Documentation</a></li>
 </ul>
 
